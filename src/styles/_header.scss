@@ -1,0 +1,155 @@
+/*--
+    03. Header Css
+--------------------------------------*/
+
+// Logo Css
+.logo {
+  margin-top: 25px;
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+  -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+  transition: padding-top 0.3s, padding-bottom 0.3s;
+}
+.navbar-shrink {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: $white;
+  z-index: 999;
+  position: fixed;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.is-sticky {
+  & .logo {
+    margin-top: 12px;
+    @media #{$large-mobile} {
+      margin-top: 2px;
+    }
+  }
+  & .main-menu {
+    & ul {
+      & li {
+        padding: 25px 0;
+      }
+    }
+  }
+}
+
+/*--
+   - Main Menu Css
+-----------------------*/
+.navbar-root {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+  .navbar-nav {
+    & .nav-item {
+      margin-right: 25px;
+      display: inline-block;
+      @media #{$desktop-device} {
+        margin-right: 18px;
+      }
+      & .nav-link {
+        padding: 0;
+        color: #333;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: $roboto;
+        text-transform: uppercase;
+        position: relative;
+        @include transition(0.4s);
+        &::before {
+          content: "";
+          background: #333;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          position: absolute;
+          bottom: -2px;
+          left: 0%;
+          @include opacity(0);
+          @include transition(0.4s);
+          margin: 0 2px;
+        }
+        &::after {
+          content: "";
+          background: #333;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          position: absolute;
+          bottom: -2px;
+          right: 0%;
+          @include opacity(0);
+          @include transition(0.4s);
+          margin: 0 2px;
+        }
+        &.active {
+          &::before {
+            visibility: visible;
+            @include opacity(1);
+            left: 50%;
+            background: $theme-color;
+          }
+          &::after {
+            visibility: visible;
+            @include opacity(1);
+            right: 50%;
+            background: $theme-color;
+          }
+          color: $theme-color;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        & > .nav-link {
+          &::before {
+            visibility: visible;
+            @include opacity(1);
+            left: 50%;
+            background: $theme-color;
+          }
+          &::after {
+            visibility: visible;
+            @include opacity(1);
+            right: 50%;
+            background: $theme-color;
+          }
+          color: $theme-color;
+        }
+      }
+    }
+  }
+}
+.header-top-2 {
+  &.main-menu {
+    & ul {
+      & li {
+        & a {
+          color: $white;
+          &::before {
+            background: $white;
+          }
+          &::after {
+            background: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.is-sticky .header-top-2 {
+  background: $theme-color;
+}

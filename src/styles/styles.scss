@@ -1,0 +1,53 @@
+@import "variabls"
+@import "mixin"
+@import "common"
+@import "element"
+@import "navigation"
+@import "header"
+@import "slider"
+@import "about"
+@import "feature"
+@import "screenshort"
+@import "career"
+@import "subscribe"
+@import "testimonial"
+@import "team-section"
+@import "contact"
+@import "footer"
+@import "coming-soon"
+@import "price-package"
+@import "plugins"
+
+a, button
+    color: inherit !important
+    text-decoration: none !important
+
+.single-slide.small-header
+    height: 392px !important
+    background-size: initial
+    .slider-text-info
+        margin:0
+
+.content
+    margin: 50px
+    ul li
+        margin-left: 30px
+        margin-top:5px
+        list-style: initial
+
+// .ReactCollapse--collapse 
+// {
+//   -moz-transition: height 0.2s ease;
+//   -webkit-transition: height 0.2s ease;
+//   -o-transition: height 0.2s ease;
+//   transition: height 0.2s ease;
+// }
+
+// .h-3 
+// {
+//     height: 2rem;
+// }
+// .w-3 
+// {
+//     width: 2rem;
+// }

@@ -1,0 +1,173 @@
+/*--
+   09. careers Area Css
+----------------------*/
+
+.career-wrapper {
+  padding: 10px;
+}
+
+ .career-bg {
+   background: url(/img/pricing/01.png);
+   background-size: cover;
+ }
+
+ .career {
+   padding: 60px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   border-radius: 50px;
+   transition: all 0.3s ease-in-out;
+   &:hover {
+     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+   }
+   @media #{$desktop-device} {
+     padding: 40px;
+   }
+   & .career-title {
+     & h4 {
+       font-size: 16px;
+     }
+     & h2 {
+       font-size: 24px;
+       line-height: 28px;
+     }
+   }
+   & .career-list {
+     margin-bottom: 40px;
+     margin-top: 40px;
+     height: 150px;
+     & ul {
+       & li {
+         margin-bottom: 10px;
+         &:last-child {
+           margin-bottom: 0;
+         }
+       }
+     }
+   }
+   & .career-btn {
+     & .button {
+       padding: 8px 30px;
+       border-radius: 30px;
+       border: 2px solid $theme-color;
+       color: $theme-color;
+       background: transparent;
+       transition: all 0.4s ease-in-out;
+       &:hover {
+         color: $white;
+         background: $theme-color;
+       }
+     }
+   }
+   &.active {
+     & .career-btn {
+       & .button {
+         border: 2px solid $theme-color;
+         color: $white;
+         background: $theme-color;
+         &:hover {
+           color: $theme-color;
+           background: $white;
+         }
+       }
+     }
+   }
+   &.active-table {
+     & .career-title {
+       & h4 {
+         color: $white;
+       }
+       & h2 {
+         color: $white;
+       }
+     }
+     & .career-list {
+       & ul {
+         & li {
+           color: $white;
+         }
+       }
+     }
+     & .career-btn {
+       & .button {
+         border: 2px solid $white;
+         color: $theme-color;
+         background: $white;
+         &:hover {
+           border: 2px solid #333;
+           color: $white;
+           background: #333;
+         }
+       }
+     }
+   }
+ }
+
+ .career-active {
+  .slick-slider {
+    width: 100%;
+    // overflow: hidden;
+  }
+  & .slick-dots {
+    margin-top: 40px;
+    text-align: center;
+    & li {
+      display: inline-block;
+      margin: 0 15px;
+      position: relative;
+      line-height: 0;
+      &::after {
+        position: absolute;
+        content: "";
+        background: #09c7e0;
+        top: 5px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+      }
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+      & {
+        button {
+          border: 2px solid $theme-color;
+          width: 10px;
+          height: 10px;
+          padding: 0;
+          border-radius: 50%;
+          background: $theme-color;
+          text-indent: -9999px;
+          position: relative;
+          &::after {
+            position: absolute;
+            content: "";
+            background: rgba(1, 193, 206, 0.3);
+            top: -5px;
+            left: -5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            z-index: 999;
+          }
+        }
+        &.slick-active {
+          & button {
+            background: $theme-color;
+            &::after {
+              position: absolute;
+              content: "";
+              background: rgba(1, 193, 206, 0.5);
+              top: -5px;
+              left: -5px;
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              z-index: 999;
+            }
+          }
+        }
+      }
+    }
+  }
+}

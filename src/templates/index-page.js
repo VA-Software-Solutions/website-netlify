@@ -6,7 +6,8 @@ import "./../styles/pages/index.sass"
 import Layout from "../components/Layout";
 import TextSection from "../sections/text-section";
 import ContactSection from "../sections/contact-section";
-
+import CareerCarousel from "../components/CareerCarousel"
+import SectionWrapper from "../sections/section-wrapper";
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
@@ -14,10 +15,11 @@ export const IndexPageTemplate = ({
   heading,
   subheading,
   about,
+  carrers,
   description,
 }) => {
   const heroImage = getImage(image) || image;
-
+  
   return (
     <div>
     <div className="hero-slider hero-slider-4" id="slider">
@@ -34,7 +36,7 @@ export const IndexPageTemplate = ({
                   <Link
                      className="slider-btn theme-btn"
                       activeClass="active"
-                      to="/services"
+                      to="/about"
                       spy={true}
                       smooth="easeInOutQuart"
                     >
@@ -62,6 +64,9 @@ export const IndexPageTemplate = ({
       </div>
     </div>
     <TextSection data={about}></TextSection>
+    <SectionWrapper data={carrers} whiteBackground={true}>
+      <CareerCarousel></CareerCarousel>
+    </SectionWrapper>
     <ContactSection></ContactSection>
     </div>
   );
@@ -73,13 +78,12 @@ IndexPageTemplate.propTypes = {
   heading: PropTypes.string,
   subheading: PropTypes.string,
   about: PropTypes.object,
+  carrers: PropTypes.object,
   description: PropTypes.string
 };
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-
-  console.log(frontmatter);
   return (
     <Layout>
       <IndexPageTemplate
@@ -88,6 +92,7 @@ const IndexPage = ({ data }) => {
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         about={frontmatter.about}
+        carrers={frontmatter.carrers}
         description={frontmatter.description}
       />
     </Layout>
@@ -122,6 +127,11 @@ export const pageQuery = graphql`
           secondaryTitle
           subheading
           content
+        }
+        carrers {
+          primaryTitle
+          secondaryTitle
+          subheading
         }
       }
     }

@@ -98,6 +98,17 @@ collections:
                   { label: "Content", name: content, widget: markdown },
                 ],
             }
+          - {
+              label: Carrers,
+              name: carrers,
+              widget: object,
+              fields:
+                [
+                  { label: "Primary title", name: primaryTitle, widget: string },
+                  { label: "Secondary title", name: secondaryTitle, widget: string },
+                  { label: "Subheading", name: subheading, widget: text }
+                ],
+            }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"

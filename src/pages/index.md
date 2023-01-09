@@ -24,4 +24,9 @@ about:
 
 
     No company overview would be complete without dropping some core values. Ours are rooted in the entrepreneurial spirit, giving employees every opportunity to be brilliant and have true ownership of the products they build. We embrace the adventure on a daily basis and invite those who refuse to accept good enough to join us for the ride.
+carrers:
+  primaryTitle: Join Us
+  secondaryTitle: View our open positions
+  subheading: You will join a fully remote team with members from different places
+    in Europe.
 ---

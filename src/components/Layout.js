@@ -13,6 +13,7 @@ const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata(); 
   return (
     <div>
+     
       <SEO title={children?.props?.title || title} description={children?.props?.description || description}></SEO>
       <MyNavbar />
       <div>{children}</div>

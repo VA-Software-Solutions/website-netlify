@@ -31,16 +31,13 @@ const Footer = ({ frontmatter }) => {
                     <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <Link to="about">About us</Link>
+                    <Link to="/about">About us</Link>
                   </li>
                   <li>
-                    <Link to="services">Our services</Link>
+                    <Link to="/careers">Careers</Link>
                   </li>
                   <li>
-                    <Link to="careers">Careers</Link>
-                  </li>
-                  <li>
-                    <ScrollLink to="Contact" spy={true} smooth="easeInOutQuart">Contact us</ScrollLink>
+                    <Link to="/contact">Contact us</Link>
                   </li>
                 </ul>
               </div>

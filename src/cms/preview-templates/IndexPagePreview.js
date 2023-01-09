@@ -14,6 +14,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         subheading={data.subheading}
         description={data.description}
         about={data.about || {}}
+        carrers={data.carrers || {}}
       />
     )
   } else {

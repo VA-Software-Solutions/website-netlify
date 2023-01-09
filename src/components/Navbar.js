@@ -6,6 +6,7 @@ import useWindowOnScroll from "../hooks/useWindowOnScroll";
 import useSmoothScrollTo from "../hooks/useSmoothScrollTo";
 import NavItem from "./Navitem";
 import Image from "./Image";
+import { navigate } from "gatsby";
 
 const MyNavbar = ({ extraItems }) => {
   const handleScrollToTop = useSmoothScrollTo(0);
@@ -22,8 +23,13 @@ const MyNavbar = ({ extraItems }) => {
 
   const handleBrandClick = React.useCallback(() => {
     closeMenu();
-    handleScrollToTop();
-  }, [closeMenu, handleScrollToTop]);
+    if(window.location.pathname == "/")
+    {
+      handleScrollToTop();
+    }else{
+      navigate("/")
+    }
+  }, [closeMenu, handleScrollToTop, navigate]);
 
   const [shrink, setShrink] = React.useState(false);
 
@@ -60,7 +66,6 @@ const MyNavbar = ({ extraItems }) => {
           <Nav className="text-uppercase ml-auto">
             <NavItem key="home" to="/" onClick={closeMenu}>Home</NavItem>
             <NavItem key="about" to="/about" onClick={closeMenu}>About</NavItem>
-            <NavItem key="services" to="/services" onClick={closeMenu}>Services</NavItem>
             <NavItem key="careers" to="/careers" onClick={closeMenu}>Careers</NavItem>
             <NavItem key="contact" to="/contact" onClick={closeMenu}>Contact</NavItem>
           </Nav>
